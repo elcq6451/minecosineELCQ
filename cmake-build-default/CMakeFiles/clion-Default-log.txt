@@ -1,0 +1,47 @@
+"D:\Program Files\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_MAKE_PROGRAM=D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -G "CodeBlocks - MinGW Makefiles" -S D:\user\minecraftmod\PrizmSDK-win-0.5.2\projects\folder -B D:\user\minecraftmod\PrizmSDK-win-0.5.2\projects\folder\cmake-build-default
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+CMake Error: Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_ffbb1/fast && 
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc.exe
+CMake Error: Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_0b0c5/fast && 
+-- Check for working C compiler: D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc.exe - broken
+CMake Error at D:/Program Files/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake:69 (message):
+  The C compiler
+
+    "D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/folder/cmake-build-default/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_0b0c5/fast && The system cannot find the file specified
+    Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_0b0c5/fast && 
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/folder/cmake-build-default/CMakeFiles/CMakeOutput.log".
+See also "D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/folder/cmake-build-default/CMakeFiles/CMakeError.log".

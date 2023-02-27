@@ -1,0 +1,4 @@
+ToolSet: w64 9.0 (local)@D:\Program Files\CLion 2022.3.2\bin\mingw
+Options: 
+
+Options:-DCMAKE_MAKE_PROGRAM=D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat
