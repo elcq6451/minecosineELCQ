@@ -1,5 +1,6 @@
 #include <fxcg/display.h>
 #include <fxcg/keyboard.h>
+#include "../includes/v_gameVideo.h"
 
 void main(void) {
     int key;
@@ -17,7 +18,6 @@ void main(void) {
     unsigned short *v = GetVRAMAddress();
     v+=y*384+x;
     *v=col;
-    
 
     while (1) {
         GetKey(&key);
