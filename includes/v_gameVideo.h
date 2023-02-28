@@ -1,7 +1,8 @@
 // Created by elcq6451 on 27/02/2023.
-
 #ifndef FOLDER_V_GAMEVIDEO_H
 #define FOLDER_V_GAMEVIDEO_H
+
+#include <string.h>
 
 typedef struct Point3 {
     float x;

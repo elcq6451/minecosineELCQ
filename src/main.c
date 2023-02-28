@@ -1,5 +1,6 @@
 #include <fxcg/display.h>
 #include <fxcg/keyboard.h>
+#include <stdio.h>
 #include "../includes/v_gameVideo.h"
 
 void main(void) {
