@@ -3,22 +3,14 @@
 #include <stdio.h>
 #include "../includes/v_gameVideo.h"
 
-void main(void) {
+int main(void) {
     int key;
-    int WIDTH;
-     
+    Bdisp_EnableColor(1);
     Bdisp_AllClr_VRAM();
-    SetBackGround(1);
-    PrintXY(1, 1, "  Hello!", TEXT_MODE_NORMAL, TEXT_COLOR_RED);
+    //PrintXY(1, 1, "  Hello!", TEXT_MODE_NORMAL, TEXT_COLOR_RED);
 
 
-    // set pixel at a coordinate
-    int y = 150;
-    int x = 30;
-    unsigned  short col = 2;
-    unsigned short *v = GetVRAMAddress();
-    v+=y*384+x;
-    *v=col;
+
 
     while (1) {
         GetKey(&key);
@@ -26,7 +18,22 @@ void main(void) {
         if (key == KEY_CTRL_EXE) {
             break;
         }
+        else if (key == KEY_CTRL_F4) {
+            Point2 var1;
+            var1.x = 12;
+            var1.y = 21;
+            Point2 var2;
+            var2.x = 250;
+            var2.y = 100;
+            DrawLine(var1, var2);
+        }
+        else if (key == KEY_CTRL_F5) {
+            PrintXY(1,1,"Table",1,1);
+        }
+        else if (key == KEY_CTRL_F6) {
+            Bdisp_AllClr_VRAM();
+        }
     }
  
-    return;
+    return 0;
 }
