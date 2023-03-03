@@ -5,19 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-
-
-typedef struct Point3 {
-    float x;
-    float y;
-    float z;
-} Point3;
-
-typedef struct Point2 {
-    int x;
-    int y;
-} Point2;
+#include "Miscellaneous.h"
 
 
 Point3 initialisePoint3(float x, float y, float z);

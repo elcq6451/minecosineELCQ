@@ -2,7 +2,8 @@
 
 #ifndef FOLDER_M_MATRIXFUNCTIONS_H
 #define FOLDER_M_MATRIXFUNCTIONS_H
-
+#include <math.h>
+#include "Miscellaneous.h"
 void *translateMatrix(Point3 pos);
 void *rotateXMatrix(float angle);
 void *rotateYMatrix(float angle);
