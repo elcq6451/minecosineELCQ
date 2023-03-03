@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+
 typedef struct Point3 {
     float x;
     float y;

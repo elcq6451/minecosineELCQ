@@ -8,15 +8,16 @@
 #include "../includes/v_gameVideo.h"
 
 
+
 Point3 initialisePoint3(float x, float y, float z) {
     Point3 initialised = { x, y, z};
     return initialised;
 }
-void Plot(int X, int Y) {
 
-    unsigned short *v = GetVRAMAddress();
-    v+= Y*384 + X;
-    *v= COLOR_CYAN;
+void Plot(int X, int Y) {
+    VRAM += Y*384 + X;
+    *VRAM= COLOR_CYAN;
+    unsigned short *VRAM = GetVRAMAddress();
 }
 
 void plotLineLow(Point2 self, Point2 self2) {
