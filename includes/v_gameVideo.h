@@ -21,10 +21,10 @@ typedef struct Point2 {
 
 
 Point3 initialisePoint3(float x, float y, float z);
-void Plot(int X, int Y);
-void plotLineLow(Point2 self, Point2 self2);
-void plotLineHigh(Point2 self, Point2 self2);
-void DrawLine(Point2 self, Point2 self2);
+void Plot(int X, int Y, unsigned short colour);
+void plotLineLow(Point2 self, Point2 self2, unsigned short colour);
+void plotLineHigh(Point2 self, Point2 self2, unsigned short colour);
+void DrawLine(Point2 self, Point2 self2, unsigned short colour);
 
 
 #endif //FOLDER_V_GAMEVIDEO_H

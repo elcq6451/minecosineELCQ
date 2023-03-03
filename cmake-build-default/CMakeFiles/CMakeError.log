@@ -13,3 +13,18 @@ Run Build Command(s):D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/ma
 Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_0b0c5/fast && 
 
 
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/folder/cmake-build-default/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_e4727/fast && The system cannot find the file specified
+Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_e4727/fast && 
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/folder/cmake-build-default/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_73970/fast && The system cannot find the file specified
+Generator: execution of make failed. Make command was: D:/user/minecraftmod/PrizmSDK-win-0.5.2/projects/example/make.bat -f Makefile cmTC_73970/fast && 
+
+

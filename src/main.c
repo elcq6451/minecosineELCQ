@@ -20,12 +20,12 @@ int main(void) {
         }
         else if (key == KEY_CTRL_F4) {
             Point2 var1;
-            var1.x = 12;
-            var1.y = 21;
+            var1.x = 0;
+            var1.y = 36;
             Point2 var2;
-            var2.x = 250;
-            var2.y = 100;
-            DrawLine(var1, var2);
+            var2.x = 50;
+            var2.y = 200;
+            DrawLine(var1, var2, 0xff00);
         }
         else if (key == KEY_CTRL_F5) {
             PrintXY(1,1,"Table",1,1);

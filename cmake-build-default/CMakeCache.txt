@@ -39,7 +39,7 @@ CMAKE_CODEBLOCKS_MAKE_ARGUMENTS:STRING=
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/g++.exe
+CMAKE_CXX_COMPILER:STRING=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -50,7 +50,7 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc-ranlib.exe
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc.exe
+CMAKE_C_COMPILER:STRING=D:/Program Files/CLion 2022.3.2/bin/mingw/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
