@@ -44,3 +44,28 @@ void *scaleMatrix(float n) {
     void* pointer = malloc(sizeof(matrix));
     return pointer;
 }
+
+void* multiplyMatrices(int first[][255], int second[][255]) {
+
+    int r1 = sizeof *first / sizeof *first[0];
+    int c1 = sizeof *first[0] / sizeof first[0][0];
+    int r2 = sizeof *second / sizeof *second[0];
+    int c2 = sizeof *second[0] / sizeof second[0][0];
+    int result[64][10];
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            result[i][j] = 0;
+        }
+    }
+
+    // Multiplying first and second matrices and storing it in result
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            for (int k = 0; k < c1; ++k) {
+                result[i][j] += first[i][k] * second[k][j];
+            }
+        }
+    }
+    void* pointer = malloc(sizeof(result));
+    return pointer;
+}

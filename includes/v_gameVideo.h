@@ -5,11 +5,18 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Miscellaneous.h"
 
+struct GameVideo {
+    void (*initPoint2)(struct GameVideo *, float x, float y);
+    void (*initPoint3)(struct GameVideo *, float x, float y, float z);
+    void (*plot)(struct GameVideo *, Point2 pos, unsigned short colour);
+    void (*PLL)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
+    void (*PLH)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
+    void (*DL)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
+};
 
-Point3 initialisePoint3(float x, float y, float z);
-void Plot(int X, int Y, unsigned short colour);
+void initVideo();
+void Plot(Point2 pos, unsigned short colour);
 void plotLineLow(Point2 self, Point2 self2, unsigned short colour);
 void plotLineHigh(Point2 self, Point2 self2, unsigned short colour);
 void DrawLine(Point2 self, Point2 self2, unsigned short colour);

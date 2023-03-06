@@ -1,31 +1,33 @@
 #include <fxcg/display.h>
 #include <fxcg/keyboard.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include "../includes/v_gameVideo.h"
+#include "../includes/Miscellaneous.h"
+
+
+
+bool PROGRAM_RUNNING = true;
+bool EXIT_PROGRAM = false;
+
+
 
 int main(void) {
+    struct GameVideo gameVideo;
     int key;
     Bdisp_EnableColor(1);
     Bdisp_AllClr_VRAM();
-    //PrintXY(1, 1, "  Hello!", TEXT_MODE_NORMAL, TEXT_COLOR_RED);
 
-
-
-
-    while (1) {
-        GetKey(&key);
-
-        if (key == KEY_CTRL_EXE) {
-            break;
-        }
-        else if (key == KEY_CTRL_F4) {
-            Point2 var1;
-            var1.x = 0;
-            var1.y = 36;
-            Point2 var2;
-            var2.x = 50;
-            var2.y = 200;
-            DrawLine(var1, var2, 0xff00);
+    while (PROGRAM_RUNNING == true) {
+        if (EXIT_PROGRAM == true) {break;}
+        key = GetKey();
+        Point2 array[2];
+        gameVideo.initPoint2 = initPoint2();
+        array[0] = gameVideo.initPoint2(10,250);
+        array[1] = gameVideo.initPoint2(250,50);
+        gameVideo.DL = DrawLine;
+        if (key == KEY_CTRL_F1) {
+            gameVideo.DL(array[0],array[1], 0x0ff0);
         }
         else if (key == KEY_CTRL_F5) {
             PrintXY(1,1,"Table",1,1);
