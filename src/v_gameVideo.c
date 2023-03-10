@@ -7,27 +7,31 @@
 #include "../includes/m_object3D.h"
 #include "../includes/Miscellaneous.h"
 
-struct GameVideo {
-    void (*initPoint2)(struct GameVideo *, float, float);
-    void (*initPoint3)(struct GameVideo *, float, float, float);
-    void (*plot)(struct GameVideo *, Point2, unsigned short);
-    void (*PLL)(struct GameVideo *, Point2, Point2, unsigned short );
-    void (*PLH)(struct GameVideo *, Point2, Point2, unsigned short );
-    void (*DL)(struct GameVideo *, Point2,  Point2, unsigned short );
-};
 
-void initPoint2(struct GameVideo * inst, float x, float y) {
-    Point2 initialised = { x, y};
+
+GameVideo initGameVideo(){
+    GameVideo GV;
+    GV.initPoint2 = &initPoint2;
+    GV.initPoint3 = &initPoint3;
+    GV.plot = &Plot;
+    GV.PLL = &plotLineLow;
+    GV.PLH = &plotLineHigh;
+    GV.DL = &DrawLine;
+    return GV;
+}
+
+Point2 initPoint2(struct GameVideo * inst, float x, float y) {
+    Point2 initialised = {x, y};
     return initialised;
 }
-void initPoint3(struct GameVideo * inst, float x, float y, float z) {
-    Point3 initialised = { x, y, z};
+Point3 initPoint3(struct GameVideo * inst, float x, float y, float z) {
+    Point3 initialised = {x, y, z};
     return initialised;
 }
 
 void Plot(struct GameVideo * inst, Point2 pos, unsigned short colour) {
     unsigned short *v = GetVRAMAddress();
-    v += pos->y*384 + pos->x;
+    v += pos.y*384 + pos.x;
     *v = colour;
 }
 
@@ -43,8 +47,8 @@ void plotLineLow(struct GameVideo * inst, Point2 self, Point2 self2, unsigned sh
     int y = self.y;
     for (int x = self.x; x <= self2.x; x++) {
         Point2 pos;
-        pos->x = x; pos->y = y;
-        Plot(pos, colour);
+        pos.x = x; pos.y = y;
+        Plot(inst, pos, colour);
         if(D > 0) {
             y = y + yi;
             D = D + (2 * (dy - dx));
@@ -66,8 +70,8 @@ void plotLineHigh(struct GameVideo * inst, Point2 self, Point2 self2, unsigned s
     int x = self.x;
     for (int y = self.y; y <= self2.y; y++) {
         Point2 pos;
-        pos->x = x; pos->y = y;
-        Plot(pos, colour)
+        pos.x = x; pos.y = y;
+        Plot(inst, pos, colour);
         if(D > 0) {
             x = x + xi;
             D = D + (2 * (dx - dy));
@@ -80,18 +84,18 @@ void plotLineHigh(struct GameVideo * inst, Point2 self, Point2 self2, unsigned s
 void DrawLine(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour) {
     if(abs(self2.y - self.y) < abs(self2.x - self.x)) {
         if(self.x > self2.x) {
-            plotLineLow(self2, self, colour);
+            plotLineLow(inst, self2, self, colour);
         }
         else{
-            plotLineLow(self, self2, colour);
+            plotLineLow(inst, self, self2, colour);
         }
     }
     else{
         if(self.y > self2.y) {
-            plotLineHigh(self2, self, colour);
+            plotLineHigh(inst, self2, self, colour);
         }
         else{
-            plotLineHigh(self, self2, colour);
+            plotLineHigh(inst, self, self2, colour);
         }
     }
     Bdisp_PutDisp_DD();
