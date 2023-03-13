@@ -16,7 +16,7 @@ GameVideo initGameVideo(){
     GV.plot = &Plot;
     GV.PLL = &plotLineLow;
     GV.PLH = &plotLineHigh;
-    GV.DL = &DrawLine;
+    GV.DrawLine = &DrawLine;
     return GV;
 }
 

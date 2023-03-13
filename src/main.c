@@ -26,7 +26,7 @@ int main(void) {
         array[0] = gameVideo.initPoint2(&gameVideo, 10, 250);
         array[1] = gameVideo.initPoint2(&gameVideo, 250, 50);
         if (key == KEY_CTRL_F1) {
-            gameVideo.DL(&gameVideo ,array[0],array[1], 0x0ff0);
+            gameVideo.DrawLine(&gameVideo ,array[0],array[1], 0x0ff0);
         }
         else if (key == KEY_CTRL_F5) {
             PrintXY(1,1,"Table",1,1);

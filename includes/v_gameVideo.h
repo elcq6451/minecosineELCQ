@@ -15,7 +15,7 @@ struct GameVideo {
     void (*plot)(struct GameVideo *, Point2 pos, unsigned short colour);
     void (*PLL)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
     void (*PLH)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
-    void (*DL)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
+    void (*DrawLine)(struct GameVideo *, Point2 self, Point2 self2, unsigned short colour);
 };
 
 Point2 initPoint2(struct GameVideo * inst, float x, float y);

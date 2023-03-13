@@ -29,7 +29,7 @@ INCLUDES	:=  includes
 # options for code and add-in generation
 #---------------------------------------------------------------------------------
 
-MKG3AFLAGS := -n basic:GDash -i uns:../unselected.png -i sel:../selected.png
+MKG3AFLAGS := -n basic:"%temp%" -i uns:../unselected.png -i sel:../selected.png
 
 # Optional: add -flto to CFLAGS and LDFLAGS to enable link-time optimization
 # (LTO). Doing so will usually allow the compiler to generate much better code
