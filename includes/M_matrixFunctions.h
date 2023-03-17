@@ -9,6 +9,7 @@ void *rotateXMatrix(float angle);
 void *rotateYMatrix(float angle);
 void *rotateZMatrix(float angle);
 void *scaleMatrix(float n);
-void *multiplyMatrices(int first[][255], int second[][255]);
+void *multiplyMatrices(float** first, float** second);
+void *multiplyMatrixFloat(float* first[1][4], float* second);
 
 #endif //FOLDER_M_MATRIXFUNCTIONS_H

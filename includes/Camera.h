@@ -2,10 +2,11 @@
 
 #ifndef FOLDER_CAMERA_H
 #define FOLDER_CAMERA_H
-#include "../includes/GameEngine.h"
+#include "../includes/v_gameVideo.h"
+
 typedef struct Camera Camera;
+
 struct Camera {
-    GameVideo renderer;
     float position[4];
     float forward[1][4];
     float up[1][4];
@@ -15,7 +16,7 @@ struct Camera {
     float nearPlane;
     float farPlane;
     float movingSpeed;
-    float rotatingSped;
+    float rotatingSpeed;
 
     float anglePitch;
     float angleYaw;

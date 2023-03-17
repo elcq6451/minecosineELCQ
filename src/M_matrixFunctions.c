@@ -45,11 +45,10 @@ void *scaleMatrix(float n) {
     return pointer;
 }
 
-void* multiplyMatrices(int first[][255], int second[][255]) {
+void* multiplyMatrices(float** first, float** second) {
 
-    int r1 = sizeof *first / sizeof *first[0];
+    int r1 = sizeof *first / sizeof first[0];
     int c1 = sizeof *first[0] / sizeof first[0][0];
-    int r2 = sizeof *second / sizeof *second[0];
     int c2 = sizeof *second[0] / sizeof second[0][0];
     int result[64][10];
     for (int i = 0; i < r1; ++i) {
@@ -64,6 +63,25 @@ void* multiplyMatrices(int first[][255], int second[][255]) {
             for (int k = 0; k < c1; ++k) {
                 result[i][j] += first[i][k] * second[k][j];
             }
+        }
+    }
+    void* pointer = malloc(sizeof(result));
+    return pointer;
+}
+void *multiplyMatrixFloat(float* first[1][4], float* second) {
+    int r1 = sizeof *first / sizeof first[0];
+    int c1 = sizeof *first[0] / sizeof first[0][0];
+    int result[1][4];
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < 1; ++j) {
+            result[i][j] = 0;
+        }
+    }
+    for (int i; i <r1; i++) {
+        for (int j; j <c1; j++) {
+            float value = *first[i][j];
+            float multiplier = *second;
+            result[i][j] = value * multiplier;
         }
     }
     void* pointer = malloc(sizeof(result));
