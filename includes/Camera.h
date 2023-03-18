@@ -25,5 +25,6 @@ struct Camera {
 
 };
 
+Camera initCamera(Point3 *position);
 void control(struct Camera* inst);
 #endif //FOLDER_CAMERA_H

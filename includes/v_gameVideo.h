@@ -7,11 +7,25 @@
 #include <stdio.h>
 #include "../includes/Miscellaneous.h"
 
+typedef struct GameVideo GameVideo;
 
-Point3 initPoint3(float x, float y, float z);
-void Plot(Point2 pos, unsigned short colour);
-void plotLineLow(Point2 self, Point2 self2, unsigned short colour);
-void plotLineHigh(Point2 self, Point2 self2, unsigned short colour);
-void DrawLine(Point2 self, Point2 self2, unsigned short colour);
+struct GameVideo {
+    Point2 (*initPoint2)(struct GameVideo *, int, int);
+    Point3 (*initPoint3)(struct GameVideo *, float, float, float);
+    void (*plot)(struct GameVideo *, Point2, unsigned short);
+    void (*PLL)(struct GameVideo *, Point2, Point2, unsigned short);
+    void (*PLH)(struct GameVideo *, Point2, Point2, unsigned short);
+    void (*DrawLine)(struct GameVideo *, Point2, Point2, unsigned short);
+};
+
+
+Point2 initPoint2(struct GameVideo * inst, int x, int y);
+Point3 initPoint3(struct GameVideo * inst, float x, float y, float z);
+void Plot(struct GameVideo * inst, Point2 pos, unsigned short colour);
+void plotLineLow(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
+void plotLineHigh(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
+void DrawLine(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
+GameVideo initGameVideo();
+
 
 #endif //FOLDER_V_GAMEVIDEO_H

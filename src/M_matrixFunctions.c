@@ -71,11 +71,10 @@ void* multiplyMatrices(float** first, float** second) {
 void *multiplyMatrixFloat(float* first[1][4], float* second) {
     int r1 = sizeof *first / sizeof first[0];
     int c1 = sizeof *first[0] / sizeof first[0][0];
-    int result[1][4];
-    for (int i = 0; i < r1; ++i) {
-        for (int j = 0; j < 1; ++j) {
-            result[i][j] = 0;
-        }
+    int** result;
+    result = malloc(1 * sizeof(int *));
+    for (int i = 0; i < 1; i++) {
+        result[i] = malloc(4* sizeof(int));
     }
     for (int i; i <r1; i++) {
         for (int j; j <c1; j++) {
@@ -84,6 +83,5 @@ void *multiplyMatrixFloat(float* first[1][4], float* second) {
             result[i][j] = value * multiplier;
         }
     }
-    void* pointer = malloc(sizeof(result));
-    return pointer;
+    return result;
 }

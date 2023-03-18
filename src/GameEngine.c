@@ -6,14 +6,15 @@
 
 GameEngine initGameEngine() {
     GameEngine GE;
-    GE.(Camera camera);
+    GameVideo GV;
+    Camera camera;
+    GE.GV = GV;
+    GE.camera = camera;
+    Point3 pos = initPoint3(&GV,10, 5 ,1);
+    GE.camera = initCamera(&pos);
     GE.WIDTH = LCD_WIDTH_PX;
     GE.DrawLine = DrawLine;
-    GE.initPoint2 = initPoint2;
+    //GE.initPoint3 = initPoint3;
+    //GE.initPoint2 = initPoint2;
     return GE;
 };
-
-Point2 initPoint2(struct GameEngine * inst, float x, float y) {
-    Point2 initialised = {x, y};
-    return initialised;
-}

@@ -5,9 +5,11 @@
 #include "../includes/Camera.h"
 //#include "../includes/Projection.h"
 #include "../includes/Miscellaneous.h"
+
 typedef struct GameEngine GameEngine;
 
 struct GameEngine {
+    GameVideo GV;
     int HEIGHT;
     int WIDTH;
     float H_HEIGHT;
@@ -15,12 +17,13 @@ struct GameEngine {
     float FPS;
     double CLOCK; //add it later
     void (*DrawLine)(struct GameVideo *, Point2, Point2, unsigned short);
-    Point2 (*initPoint2)(struct GameEngine*, int, int);
+    Point2 (*initPoint2)(struct GameVideo*, int, int);
+    Point3 (*initPoint3)(struct GameVideo*, float, float, float);
+
     Camera camera;
     //Projection projection;
     //Object
 };
 
 GameEngine initGameEngine();
-Point2 initPoint2 (struct GameEngine *, float, float);
 #endif //FOLDER_GAMEENGINE_H
