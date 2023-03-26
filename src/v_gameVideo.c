@@ -98,6 +98,3 @@ void DrawLine(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short
     }
     Bdisp_PutDisp_DD();
 }
-void createObject(void) {
-
-}

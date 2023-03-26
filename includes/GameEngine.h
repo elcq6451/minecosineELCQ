@@ -2,10 +2,12 @@
 
 #ifndef FOLDER_GAMEENGINE_H
 #define FOLDER_GAMEENGINE_H
+#include "fxcg/display.h"
 #include "../includes/Camera.h"
-//#include "../includes/Projection.h"
-#include "../includes/Miscellaneous.h"
+#include "./Miscellaneous.h"
+#include "./v_gameVideo.h"
 
+struct Projection;
 typedef struct GameEngine GameEngine;
 
 struct GameEngine {
@@ -17,13 +19,15 @@ struct GameEngine {
     float FPS;
     double CLOCK; //add it later
     void (*DrawLine)(struct GameVideo *, Point2, Point2, unsigned short);
-    Point2 (*initPoint2)(struct GameVideo*, int, int);
-    Point3 (*initPoint3)(struct GameVideo*, float, float, float);
+    void (*create)(struct GameEngine*);
+    Point2 (*initPoint2)(struct GameVideo *, float, float);
+    Point3 (*initPoint3)(struct GameVideo *, float, float, float);
 
     Camera camera;
-    //Projection projection;
+    struct Projection *projection;
     //Object
 };
 
 GameEngine initGameEngine();
+void create (struct GameEngine*);
 #endif //FOLDER_GAMEENGINE_H

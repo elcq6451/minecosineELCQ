@@ -2,7 +2,8 @@
 
 #ifndef FOLDER_CAMERA_H
 #define FOLDER_CAMERA_H
-#include "../includes/v_gameVideo.h"
+#include "./v_gameVideo.h"
+
 
 typedef struct Camera Camera;
 
