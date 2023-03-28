@@ -10,6 +10,7 @@
 
 GameVideo initGameVideo(){
     GameVideo GV;
+    GV.initPoint2 = &initPoint2;
     GV.initPoint3 = &initPoint3;
     GV.plot = &Plot;
     GV.PLL = &plotLineLow;

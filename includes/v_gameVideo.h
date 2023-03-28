@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "../includes/Miscellaneous.h"
 
 typedef struct GameVideo GameVideo;
@@ -24,7 +25,7 @@ Point3 initPoint3(struct GameVideo * inst, float x, float y, float z);
 void Plot(struct GameVideo * inst, Point2 pos, unsigned short colour);
 void plotLineLow(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
 void plotLineHigh(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
-void DrawLine(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
+extern void DrawLine(struct GameVideo * inst, Point2 self, Point2 self2, unsigned short colour);
 GameVideo initGameVideo();
 
 

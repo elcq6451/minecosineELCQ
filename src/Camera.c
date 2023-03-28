@@ -32,29 +32,26 @@ void control(struct Camera* inst) {
     int key;
     GetKey(&key);
     if(key == KEY_PRGM_6) {
-        void* rightptr = &inst->right;
-        float* dPosition = multiplyMatrixFloat(rightptr, &inst->movingSpeed);
+        float* dPosition = multiplyMatrixByScalar(&inst->right,1, 4, inst->movingSpeed);
         for (int i=0; i < sizeof(inst->position) / sizeof(inst->position[0]); i ++) {
             inst->position[i] += dPosition[i];
         }
     }
     else if(key == KEY_PRGM_8) {
-        void* forwardptr = &inst->forward;
-        float* dPosition = multiplyMatrixFloat(forwardptr, &inst->movingSpeed);
+        float* dPosition = multiplyMatrixByScalar(&inst->forward, 1, 4, inst->movingSpeed);
         for (int i=0; i < sizeof(inst->position) / sizeof(inst->position[0]); i ++) {
             inst->position[i] += dPosition[i];
         }
     }
     else if(key == KEY_PRGM_4) {
-        void* rightptr = &inst->right;
-        float* dPosition = multiplyMatrixFloat(rightptr, &inst->movingSpeed);
+
+        float* dPosition = multiplyMatrixByScalar(&inst->right, 1, 4, inst->movingSpeed);
         for (int i=0; i < sizeof(inst->position) / sizeof(inst->position[0]); i ++) {
             inst->position[i] -= dPosition[i];
         }
     }
     else if(key == KEY_PRGM_5) {
-        void* forwardptr = &inst->forward;
-        float* dPosition = multiplyMatrixFloat(forwardptr, &inst->movingSpeed);
+        float* dPosition = multiplyMatrixByScalar(&inst->forward, 1, 4, inst->movingSpeed);
         for (int i=0; i < sizeof(inst->position) / sizeof(inst->position[0]); i ++) {
             inst->position[i] -= dPosition[i];
         }

@@ -8,10 +8,10 @@ GameEngine initGameEngine() {
     Camera camera;
     GE.GV = initGameVideo();
     GE.WIDTH = LCD_WIDTH_PX;
-    GE.DrawLine = DrawLine;
+    GE.DrawLine = &DrawLine;
     GE.create = create;
-    GE.initPoint2 = initPoint2;
-    GE.initPoint3 = initPoint3;
+    GE.initPoint2 = &initPoint2;
+    GE.initPoint3 = &initPoint3;
     return GE;
 };
 void create (struct GameEngine* GE) {

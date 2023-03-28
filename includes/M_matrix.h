@@ -9,7 +9,7 @@ void *rotateXMatrix(float angle);
 void *rotateYMatrix(float angle);
 void *rotateZMatrix(float angle);
 void *scaleMatrix(float n);
-void *multiplyMatrices(float** first, float** second);
-void *multiplyMatrixFloat(float* first[1][4], float* second);
+void *multiplyMatrices(float** first, int r1, int c1, float** second, int c2);
+float *multiplyMatrixByScalar(float* matrix, int rows, int cols, float scalar);
 
 #endif //FOLDER_M_MATRIXFUNCTIONS_H
