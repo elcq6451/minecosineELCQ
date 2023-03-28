@@ -38,7 +38,7 @@ MKG3AFLAGS := -n basic:"%temp%" -i uns:../unselected.png -i sel:../selected.png
 CFLAGS	= -Os -Wall $(MACHDEP) $(INCLUDE) -ffunction-sections -fdata-sections
 CXXFLAGS	=	$(CFLAGS) -fno-exceptions
 
-LDFLAGS	= $(MACHDEP) -T$(FXCGSDK)/toolchain/prizm.x -Wl,-static -Wl,-gc-sections -lm
+LDFLAGS	= $(MACHDEP) -T$(FXCGSDK)/toolchain/prizm.x -Wl,-static -Wl,-gc-sections
 
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project

@@ -1,5 +1,5 @@
 // Created by elcq6451 on 03/03/2023.
-#include "../includes/M_matrixFunctions.h"
+#include "../includes/M_matrix.h"
 #include <stdlib.h>
 
 

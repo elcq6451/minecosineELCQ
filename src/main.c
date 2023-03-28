@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "../includes/Miscellaneous.h"
-#include "../includes/M_matrixFunctions.h"
+#include "../includes/M_matrix.h"
 #include "../includes/GameEngine.h"
 
 

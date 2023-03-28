@@ -4,6 +4,7 @@
 #define FOLDER_PROJECTION_H
 #include<math.h>
 #include "./GameEngine.h"
+#include "./math.h"
 
 typedef struct Projection Projection;
 
