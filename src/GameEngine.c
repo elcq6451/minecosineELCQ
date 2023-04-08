@@ -1,21 +1,16 @@
-// Created by elcq6451 on 11/03/2023.
 #include "../includes/GameEngine.h"
-#include "../includes/Projection.h"
+#include "../includes/Video.h"
 
+GameEngine InitGameEngine(int height, int width) {
+    GameEngine gameEngine = {0};
+    gameEngine.width = width;
+    gameEngine.height = height;
+    gameEngine.initPoint2I = &initPoint2I;
+    gameEngine.initPoint2F = &initPoint2F;
+    gameEngine.initPoint3F = &initPoint3F;
+    gameEngine.PlotColourPixel = &PlotColourPixel;
+    gameEngine.DrawLine = &DrawLine;
+    gameEngine.UpdateScreen = &UpdateScreen;
 
-GameEngine initGameEngine() {
-    GameEngine GE;
-    Camera camera;
-    GE.GV = initGameVideo();
-    GE.WIDTH = LCD_WIDTH_PX;
-    GE.DrawLine = &DrawLine;
-    GE.create = create;
-    GE.initPoint2 = &initPoint2;
-    GE.initPoint3 = &initPoint3;
-    return GE;
-};
-void create (struct GameEngine* GE) {
-    Point3 pos = initPoint3(&GE->GV,10, 5 ,1);
-    GE->camera = initCamera(&pos);
-    GE->projection = initProjection(&GE);
+    return gameEngine;
 }
