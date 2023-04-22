@@ -1,4 +1,5 @@
 #include "../includes/Video.h"
+#include <fxcg/display.h>
 
 void PlotColourPixel(Point2I location, unsigned short colour) {  //plots a Colour at a specific pixel
     unsigned short *vramPointer = GetVRAMAddress();
@@ -79,7 +80,4 @@ void DrawLine(Point2I self, Point2I self2, unsigned short colour) {
             PlotLineHigh(self, self2, colour);
         }
     }
-}
-void UpdateScreen() {
-    Bdisp_PutDisp_DD();
 }
